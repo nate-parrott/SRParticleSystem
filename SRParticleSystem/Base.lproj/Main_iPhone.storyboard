@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--GLKit View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
                 <glkViewController preferredFramesPerSecond="30" id="LVB-YS-i5n" customClass="SRViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GNW-ZU-i4S"/>
+                        <viewControllerLayoutGuide type="bottom" id="I4X-tW-WRC"/>
+                    </layoutGuides>
                     <glkView key="view" contentMode="scaleToFill" id="bdc-N1-crn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWQ-Zu-gKP">
+                                <rect key="frame" x="0.0" y="529" width="320" height="39"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="1" maximumValue="5000000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-db-Nwp">
+                                        <rect key="frame" x="218" y="5" width="94" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </stepper>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yce-gH-HVF">
+                                        <rect key="frame" x="20" y="9" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="CYP-sz-hFW"/>
+                                    <constraint firstAttribute="centerY" secondItem="yTw-db-Nwp" secondAttribute="centerY" id="DYj-K0-GC8"/>
+                                    <constraint firstItem="yce-gH-HVF" firstAttribute="leading" secondItem="cWQ-Zu-gKP" secondAttribute="leading" constant="20" id="RQE-nQ-3Dy"/>
+                                    <constraint firstAttribute="centerY" secondItem="yce-gH-HVF" secondAttribute="centerY" id="h9Q-Mp-tS3"/>
+                                    <constraint firstAttribute="trailing" secondItem="yTw-db-Nwp" secondAttribute="trailing" constant="8" id="jEW-2Z-THG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cWQ-Zu-gKP" secondAttribute="trailing" id="6ZN-k8-PUO"/>
+                            <constraint firstItem="cWQ-Zu-gKP" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="Y2b-Tz-5uz"/>
+                            <constraint firstItem="I4X-tW-WRC" firstAttribute="top" secondItem="cWQ-Zu-gKP" secondAttribute="bottom" id="a0z-dK-mVP"/>
+                        </constraints>
                     </glkView>
+                    <connections>
+                        <outlet property="_label" destination="yce-gH-HVF" id="dcM-no-2SP"/>
+                        <outlet property="_particleCountStepper" destination="yTw-db-Nwp" id="tL4-XH-Iqa"/>
+                    </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>

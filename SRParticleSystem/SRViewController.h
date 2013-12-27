@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
+#import "SRParticleSystem.h"
 
-@interface SRViewController : GLKViewController
+@interface SRViewController : GLKViewController {
+    SRParticleSystem* _particleSystem;
+    IBOutlet UILabel* _label;
+    IBOutlet UIStepper* _particleCountStepper;
+    
+    int _prevFPS;
+}
 
 @end
