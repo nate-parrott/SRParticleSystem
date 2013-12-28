@@ -71,8 +71,8 @@
 {
     [EAGLContext setCurrentContext:self.context];
     
-    _particleSystem = [[SRParticleSystem alloc] initWithParticleCount:1000 options:@{}];
-    _particleSystem.particleRadius = 0.01;
+    _particleSystem = [[SRParticleSystem alloc] initWithParticleCount:10000 options:@{}];
+    _particleSystem.particleRadius = 0.003;
     _particleSystem.startPos = GLKVector3Make(0, -0.5, -1);
     _particleSystem.endPos = GLKVector3Make(0, 0.5, -1);
     _particleSystem.startPosVariance = GLKVector3Make(0, 0, 0);
