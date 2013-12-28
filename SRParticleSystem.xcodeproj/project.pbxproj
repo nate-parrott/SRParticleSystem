@@ -16,10 +16,7 @@
 		5F5111B1186CD59E00F16599 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5111B0186CD59E00F16599 /* main.m */; };
 		5F5111B5186CD59E00F16599 /* SRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5111B4186CD59E00F16599 /* SRAppDelegate.m */; };
 		5F5111B8186CD59E00F16599 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5111B6186CD59E00F16599 /* Main_iPhone.storyboard */; };
-		5F5111BB186CD59E00F16599 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5111B9186CD59E00F16599 /* Main_iPad.storyboard */; };
-		5F5111BD186CD59E00F16599 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 5F5111BC186CD59E00F16599 /* Shader.fsh */; };
-		5F5111BF186CD59E00F16599 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5F5111BE186CD59E00F16599 /* Shader.vsh */; };
-		5F5111C2186CD59E00F16599 /* SRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5111C1186CD59E00F16599 /* SRViewController.m */; };
+		5F5111C2186CD59E00F16599 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5111C1186CD59E00F16599 /* ExampleViewController.m */; };
 		5F5111C4186CD59E00F16599 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5111C3186CD59E00F16599 /* Images.xcassets */; };
 		5F5111CB186CD59E00F16599 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5111CA186CD59E00F16599 /* XCTest.framework */; };
 		5F5111CC186CD59E00F16599 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5111A0186CD59E00F16599 /* Foundation.framework */; };
@@ -56,11 +53,8 @@
 		5F5111B3186CD59E00F16599 /* SRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRAppDelegate.h; sourceTree = "<group>"; };
 		5F5111B4186CD59E00F16599 /* SRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRAppDelegate.m; sourceTree = "<group>"; };
 		5F5111B7186CD59E00F16599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		5F5111BA186CD59E00F16599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		5F5111BC186CD59E00F16599 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		5F5111BE186CD59E00F16599 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		5F5111C0186CD59E00F16599 /* SRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRViewController.h; sourceTree = "<group>"; };
-		5F5111C1186CD59E00F16599 /* SRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRViewController.m; sourceTree = "<group>"; };
+		5F5111C0186CD59E00F16599 /* ExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		5F5111C1186CD59E00F16599 /* ExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
 		5F5111C3186CD59E00F16599 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F5111C9186CD59E00F16599 /* SRParticleSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SRParticleSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5111CA186CD59E00F16599 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -139,11 +133,8 @@
 				5F5111B3186CD59E00F16599 /* SRAppDelegate.h */,
 				5F5111B4186CD59E00F16599 /* SRAppDelegate.m */,
 				5F5111B6186CD59E00F16599 /* Main_iPhone.storyboard */,
-				5F5111B9186CD59E00F16599 /* Main_iPad.storyboard */,
-				5F5111BC186CD59E00F16599 /* Shader.fsh */,
-				5F5111BE186CD59E00F16599 /* Shader.vsh */,
-				5F5111C0186CD59E00F16599 /* SRViewController.h */,
-				5F5111C1186CD59E00F16599 /* SRViewController.m */,
+				5F5111C0186CD59E00F16599 /* ExampleViewController.h */,
+				5F5111C1186CD59E00F16599 /* ExampleViewController.m */,
 				5F5111E0186CD5B000F16599 /* GLProgram.h */,
 				5F5111E1186CD5B000F16599 /* GLProgram.m */,
 				5F5111E2186CD5B000F16599 /* SRParticleSystem.h */,
@@ -264,12 +255,9 @@
 			files = (
 				5F5111E9186CD5B000F16599 /* SRParticleSystem.vsh in Resources */,
 				5F5111E8186CD5B000F16599 /* SRParticleSystem.fsh in Resources */,
-				5F5111BB186CD59E00F16599 /* Main_iPad.storyboard in Resources */,
 				5F5111B8186CD59E00F16599 /* Main_iPhone.storyboard in Resources */,
 				5F5111C4186CD59E00F16599 /* Images.xcassets in Resources */,
 				5F5111AF186CD59E00F16599 /* InfoPlist.strings in Resources */,
-				5F5111BD186CD59E00F16599 /* Shader.fsh in Resources */,
-				5F5111BF186CD59E00F16599 /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +278,7 @@
 			files = (
 				5F5111B1186CD59E00F16599 /* main.m in Sources */,
 				5F5111E6186CD5B000F16599 /* GLProgram.m in Sources */,
-				5F5111C2186CD59E00F16599 /* SRViewController.m in Sources */,
+				5F5111C2186CD59E00F16599 /* ExampleViewController.m in Sources */,
 				5F5111E7186CD5B000F16599 /* SRParticleSystem.m in Sources */,
 				5F5111B5186CD59E00F16599 /* SRAppDelegate.m in Sources */,
 			);
@@ -329,14 +317,6 @@
 				5F5111B7186CD59E00F16599 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		5F5111B9186CD59E00F16599 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F5111BA186CD59E00F16599 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		5F5111D3186CD59E00F16599 /* InfoPlist.strings */ = {
@@ -511,6 +491,7 @@
 				5F5111DC186CD59E00F16599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F5111DD186CD59E00F16599 /* Build configuration list for PBXNativeTarget "SRParticleSystemTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +500,7 @@
 				5F5111DF186CD59E00F16599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

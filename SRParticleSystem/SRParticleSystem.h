@@ -10,6 +10,14 @@
 #import "GLProgram.h"
 #import <GLKit/GLKit.h>
 
+/*
+    These can be passed in the options dictionary when constructing the particle system.
+ */
+NSString* SRParticleSystemOverrideVertexShaderString;
+NSString* SRParticleSystemOverrideFragmentShaderString;
+
+
+
 @interface SRParticleSystem : NSObject {
     GLProgram* _program;
     NSTimeInterval _startTime;
@@ -34,6 +42,10 @@
 @property float particleRadius;
 @property GLKVector4 particleColor;
 @property GLKVector3 startPos, endPos, startPosVariance, endPosVariance;
+/*
+ Start pos and end pos variance adjust the amount how much particles will randomly deviate from the start and end positions. A variance of zero means the particles will start/end at a single point, while a wide deviance means they'll be spread out.
+ They're vector parameters (to allow for different deviances in x, y and z directions) but at the moment, only the x value is used, and it adjusts the variance in ALL dimensions.
+ */
 
 @property(readonly)int particleCount;
 

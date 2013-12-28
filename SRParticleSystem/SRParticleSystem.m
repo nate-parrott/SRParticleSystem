@@ -8,6 +8,9 @@
 
 #import "SRParticleSystem.h"
 
+NSString* SRParticleSystemOverrideVertexShaderString = @"kSRParticleSystemOverrideVertexShaderString";
+NSString* SRParticleSystemOverrideFragmentShaderString = @"kSRParticleSystemOverrideFragmentShaderString";
+
 typedef struct {
     unsigned char part;
     float particleID;
@@ -28,7 +31,10 @@ typedef struct {
     _modelviewProjectionMatrix = GLKMatrix4MakePerspective(65*M_PI/180, 1, 0.1, 1);
     _particleColor = GLKVector4Make(1, 1, 1, 1);
     
-    _program = [[GLProgram alloc] initWithVertexShaderFilename:@"SRParticleSystem" fragmentShaderFilename:@"SRParticleSystem"];
+    // init. the shader:
+    NSString* fragmentShader = options[SRParticleSystemOverrideFragmentShaderString]? options[SRParticleSystemOverrideFragmentShaderString] : [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SRParticleSystem" ofType:@"fsh"] encoding:NSUTF8StringEncoding error:nil];
+    NSString* vertexShader = options[SRParticleSystemOverrideVertexShaderString]? options[SRParticleSystemOverrideVertexShaderString] : [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SRParticleSystem" ofType:@"vsh"] encoding:NSUTF8StringEncoding error:nil];
+    _program = [[GLProgram alloc] initWithVertexShaderString:vertexShader fragmentShaderString:fragmentShader];
     [_program addAttribute:@"part"];
     [_program addAttribute:@"particleID"];
     if (![_program link]) {
