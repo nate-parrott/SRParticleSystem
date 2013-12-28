@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="529" width="320" height="39"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="1" maximumValue="5000000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-db-Nwp">
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10000" minimumValue="1" maximumValue="5000000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="yTw-db-Nwp">
                                         <rect key="frame" x="218" y="5" width="94" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </stepper>

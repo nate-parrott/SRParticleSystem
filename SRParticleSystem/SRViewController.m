@@ -90,10 +90,6 @@ GLfloat gCubeVertexData[216] =
 - (void)setupGL;
 - (void)tearDownGL;
 
-- (BOOL)loadShaders;
-- (BOOL)compileShader:(GLuint *)shader type:(GLenum)type file:(NSString *)file;
-- (BOOL)linkProgram:(GLuint)prog;
-- (BOOL)validateProgram:(GLuint)prog;
 @end
 
 @implementation SRViewController
@@ -101,7 +97,9 @@ GLfloat gCubeVertexData[216] =
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
+    
+    self.preferredFramesPerSecond = 60;
+    
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 
     if (!self.context) {

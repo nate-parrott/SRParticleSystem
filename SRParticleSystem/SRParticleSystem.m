@@ -24,7 +24,7 @@ typedef struct {
     _endPos = GLKVector3Make(1, 0, 0);
     _endPosVariance = GLKVector3Make(0.3, 0.3, 0.3);
     _secondsPerCycle = 1;
-    _particleRadius = 0.1;
+    _particleRadius = 0.05;
     _modelviewProjectionMatrix = GLKMatrix4MakePerspective(65*M_PI/180, 1, 0.1, 1);
     _particleColor = GLKVector4Make(1, 1, 1, 1);
     

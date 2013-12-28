@@ -17,12 +17,12 @@ uniform vec4 startPos, endPos;
 uniform float startPosVariance, endPosVariance;
 
 attribute float vertexPart;
-/* 
+/*
  vertex part—what part of the particle is this vertex?
-    0: upper left
-    1: lower left
-    2: lower right
-    3: upper right
+ 0: upper left
+ 1: lower left
+ 2: lower right
+ 3: upper right
  */
 attribute float particleID;
 /*
@@ -45,10 +45,17 @@ float nrand(vec2 co){ // like rand(), but returns results in [-1..1]
 
 vec3 randVec(float cycle, float particleID, float seed) {
     return vec3(
-    nrand(vec2(particleID+seed, cycle)),
-    nrand(vec2(particleID, cycle-seed)),
-    nrand(vec2(cycle+seed, particleID))
-    );
+                nrand(vec2(particleID+seed, cycle)),
+                nrand(vec2(particleID, cycle-seed)),
+                nrand(vec2(cycle+seed, particleID))
+                );
+}
+
+vec4 projectVec(vec4 v) {
+    vec4 projected = modelViewProjectionMatrix * v;
+    projected.xyz /= projected.w;
+    projected.w = 1.0;
+    return projected;
 }
 
 void main()
@@ -67,19 +74,19 @@ void main()
     end.xyz += randVec(cycle, particleID, 2.0)*endPosVariance;
     vec4 worldSpacePos = start*(1.0-t) + end*t;
     
-    vec4 eyePos = modelViewProjectionMatrix * worldSpacePos;
-    float eyeRadius = distance(eyePos, (modelViewProjectionMatrix * (worldSpacePos + vec4(particleRadius, 0.0, 0.0, 0.0))));
+    vec4 eyePos = projectVec(worldSpacePos);
+    float eyeRadius = distance(eyePos, projectVec(worldSpacePos + vec4(particleRadius, 0.0, 0.0, 0.0)));
     
     int part = int(vertexPart);
     float x = (part==0 || part==1)? 0.0 : 1.0;
     float y = (part==0 || part==2)? 0.0 : 1.0;
     
     gl_Position = vec4(
-    eyePos.x + (x-0.5)*eyeRadius*2.0,
-    eyePos.y + (y-0.5)*eyeRadius*2.0,
-    0.0,
-    1.0
-    );
+                       eyePos.x + (x-0.5)*eyeRadius*2.0,
+                       eyePos.y + (y-0.5)*eyeRadius*2.0,
+                       eyePos.z,
+                       1.0
+                       );
     //gl_Position = vec4(0.0+x*0.1, 0.0+y*0.1, 0.0, 1.0);
     faceCoord = vec2(x, y);
 }
